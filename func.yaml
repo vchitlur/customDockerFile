@@ -1,0 +1,23 @@
+schema_version: 20180708
+name: fnproject/hello
+version: 0.0.1
+runtime: java
+build_image: x/y
+run_image: x/y
+cmd: com.example.fn.HelloFunction::handleRequest
+memory: 128
+timeout: 30
+config:
+  key: value
+  key2: value2
+  keyN: valueN
+expects:
+  config:
+    - name: SECRET_1
+      required: true
+    - name: SECRET_2
+      required: false
+triggers:
+  - name: triggerOne
+    type: http
+    source: /trigger-path
